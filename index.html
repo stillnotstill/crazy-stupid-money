@@ -283,24 +283,18 @@
       color: var(--fg-soft);
     }
 
-    .social-icons {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .social-icons a {
+    .social-row a {
       color: var(--fg-soft);
       transition: color 0.2s ease, transform 0.2s ease;
       display: inline-flex;
     }
 
-    .social-icons a:hover {
+    .social-row a:hover {
       color: var(--accent);
       transform: translateY(-1px);
     }
 
-    .social-icons svg {
+    .social-row svg {
       width: 20px;
       height: 20px;
       display: block;
@@ -341,7 +335,7 @@
       .email-row { flex-wrap: wrap; gap: 6px 16px; }
       .email-row .label { width: auto; }
       blockquote.question { padding-left: 20px; }
-      .social-icons { gap: 22px; }
+      .social-row { gap: 16px; }
     }
 
     @media (max-width: 440px) {
@@ -372,15 +366,15 @@
     <div class="wrap">
       <p class="eyebrow">Editorial No. 01</p>
       <h2>Every dollar has a story.<br>Most are&nbsp;insane.</h2>
-      <blockquote class="question">
-        What's the craziest money you ever spent?
-      </blockquote>
       <p class="body">
         The purchase they still defend. The trip that broke them. The gift they'll never regret. The bet that somehow paid off.
       </p>
       <p class="body">
         <em>Crazy Stupid Money</em> points a camera, asks one question, and lets people tell it. Then we ask: crazy, stupid, or money?
       </p>
+      <blockquote class="question">
+        What's the craziest money you ever spent?
+      </blockquote>
     </div>
   </section>
 
