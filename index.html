@@ -235,6 +235,22 @@
       max-width: 500px;
     }
 
+    /* Publication tagline — italic serif lede under a section heading */
+    p.pub-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(19px, 2.4vw, 24px);
+      color: var(--fg-soft);
+      line-height: 1.4;
+      margin-bottom: 18px;
+    }
+
+    /* Beehiiv embed wrapper — spaced like other section blocks */
+    .subscribe {
+      margin-top: 32px;
+    }
+
     /* CONTACT */
     .email-row {
       display: flex;
@@ -378,6 +394,20 @@
     </div>
   </section>
 
+  <section id="spare-change">
+    <div class="wrap">
+      <p class="eyebrow">The Quarterly</p>
+      <h2>Spare Change</h2>
+      <p class="pub-tagline">Money behavior, observed.</p>
+      <p class="body">
+        A quarterly publication from <em>Crazy Stupid Money</em>. Issue No. 01 drops Q3 2026.
+      </p>
+      <div class="subscribe">
+        <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="3330baba-39b2-441e-9ba0-2025b2a1c36c"></script>
+      </div>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="wrap">
       <p class="eyebrow">Correspondence</p>
@@ -414,6 +444,8 @@
     <p class="copy">&copy; <span id="year"></span> Crazy Stupid Corp · All rights reserved</p>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </footer>
+
+  <script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
 
 </body>
 </html>
