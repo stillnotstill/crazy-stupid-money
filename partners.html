@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crazy Stupid Money — Partner Kit</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Crazy Stupid Money — Founding Partner Kit. Integrations that feel like content, not commercials.">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23142a1e'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='56' font-family='Georgia' fill='%23ede2c4'%3E%24%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f4efe2;          /* cream sheet, slightly muted */
+      --frame: #0f2319;       /* deep green page frame (desktop sides) */
+      --ink: #2d5a27;         /* forest green, headings */
+      --ink-deep: #1a3a16;    /* deep green */
+      --text: #33352e;        /* body text */
+      --text-soft: #56594d;   /* secondary text */
+      --mute: #8b8167;        /* muted labels */
+      --accent: #8b7a4a;      /* bronze/gold */
+      --gold: #d4c67a;        /* bright gold on dark blocks */
+      --cream: #faf8f2;
+      --card: #ffffff;
+      --rule: rgba(45, 90, 39, 0.18);
+      --green-block: #2d5a27;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-weight: 300;
+      background-color: var(--frame);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cg fill='none' stroke='%231e3d28' stroke-width='0.5' opacity='0.55'%3E%3Cpath d='M0 16 L16 0'/%3E%3Cpath d='M0 0 L16 16'/%3E%3C/g%3E%3C/svg%3E");
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Cream sheet floating on the green frame */
+    .sheet {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--bg);
+      min-height: 100vh;
+      position: relative;
+      z-index: 2;
+      border-left: 1px solid var(--accent);
+      border-right: 1px solid var(--accent);
+      box-shadow: 0 0 80px rgba(0, 0, 0, 0.35);
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 2;
+      padding: 0 44px;
+    }
+
+    /* HERO */
+    header.hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 60px 32px 44px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .masthead {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--mute);
+      margin-bottom: 30px;
+    }
+    .plate {
+      width: clamp(116px, 17vw, 142px);
+      aspect-ratio: 1 / 1;
+      margin-bottom: 24px;
+      background: var(--green-block);
+      position: relative;
+      box-shadow: 0 2px 0 rgba(45,90,39,0.08), 0 20px 40px -12px rgba(0,0,0,0.25);
+    }
+    .plate::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      box-shadow: inset 0 0 0 1px rgba(45, 90, 39, 0.25);
+      pointer-events: none;
+    }
+    .plate img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    h1.wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: clamp(40px, 6vw, 60px);
+      letter-spacing: -0.015em;
+      color: var(--ink);
+      line-height: 1.04;
+      margin-bottom: 12px;
+    }
+    h1.wordmark em { font-style: italic; font-weight: 500; }
+    .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--text-soft);
+    }
+    .kit-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 18px;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 50px 0;
+      position: relative;
+    }
+    section + section { border-top: 1px solid var(--rule); }
+
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--mute);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .eyebrow::before {
+      content: '';
+      width: 20px; height: 1px;
+      background: var(--accent);
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: clamp(26px, 3.4vw, 36px);
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 18px;
+    }
+    h2 .sub {
+      display: block;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 0.55em;
+      color: var(--text-soft);
+      margin-top: 6px;
+    }
+
+    p.body {
+      font-size: 16px;
+      color: var(--text);
+      line-height: 1.75;
+      max-width: 580px;
+    }
+    p.body + p.body { margin-top: 16px; }
+    p.body em { color: var(--ink); font-style: italic; }
+
+    .pull-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-style: italic;
+      font-size: clamp(20px, 2.6vw, 26px);
+      color: var(--ink);
+      text-align: center;
+      margin: 28px 0 4px;
+    }
+
+    /* STATS — green accent block */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 32px;
+      background: var(--green-block);
+      border-radius: 4px;
+      padding: 22px 16px;
+    }
+    .stat { text-align: center; }
+    .stat .n {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: clamp(26px, 4vw, 34px);
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat .l {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(237,226,196,0.8);
+      margin-top: 8px;
+    }
+
+    /* TWO-COL (format) */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 6px;
+    }
+    .two-col h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 19px;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .two-col .dur { color: var(--mute); font-size: 13px; font-weight: 400; }
+    .two-col p { font-size: 14px; line-height: 1.6; color: var(--text-soft); margin-top: 6px; }
+
+    /* WORK / EPISODES */
+    .episodes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .episode {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      aspect-ratio: 9 / 16;
+      background: #e7e1d2;
+      border-radius: 3px;
+      box-shadow: 0 1px 0 rgba(45,90,39,0.08), 0 14px 30px -14px rgba(0,0,0,0.35);
+    }
+    .episode::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      box-shadow: inset 0 0 0 1px rgba(45, 90, 39, 0.18);
+      pointer-events: none;
+      z-index: 2;
+      border-radius: 3px;
+    }
+    .episode img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s ease, filter 0.3s ease;
+    }
+    .episode .play {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: rgba(26, 58, 22, 0.55);
+      border: 1.5px solid rgba(250, 248, 242, 0.92);
+      z-index: 3;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+    .episode .play::after {
+      content: '';
+      width: 0; height: 0;
+      border-left: 14px solid #faf8f2;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      margin-left: 4px;
+    }
+    .episode:hover img { transform: scale(1.05); filter: brightness(1.05); }
+    .episode:hover .play { background: var(--accent); transform: translate(-50%, -50%) scale(1.08); }
+
+    .watch-more { margin-top: 24px; }
+    .watch-more a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 3px;
+    }
+    .watch-more a:hover { color: var(--accent); }
+
+    /* DISTRIBUTION */
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-top: 22px;
+    }
+    .platform-card {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 12px 8px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .platform-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .platform-card .name { font-size: 12px; font-weight: 500; color: var(--ink); }
+    .platform-card .handle { font-size: 10px; color: var(--mute); margin-top: 3px; word-break: break-word; }
+
+    /* AUDIENCE */
+    .aud-note { margin-top: 14px; font-size: 14px; color: var(--text-soft); }
+    .aud-note strong { color: var(--ink); font-weight: 500; }
+
+    /* TIERS */
+    .tier {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 20px 22px;
+      margin-top: 14px;
+    }
+    .tier-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .tier p { font-size: 14px; line-height: 1.65; color: var(--text-soft); }
+    .tier .scope {
+      font-size: 12px;
+      color: var(--mute);
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--rule);
+    }
+
+    /* ROADMAP */
+    .phase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .phase {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 16px 18px;
+    }
+    .phase .ph {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+    .phase .pt {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 17px;
+      color: var(--ink);
+      margin-bottom: 5px;
+    }
+    .phase p { font-size: 13px; line-height: 1.55; color: var(--text-soft); }
+
+    /* FOUNDING — green accent block */
+    .founding {
+      background: linear-gradient(135deg, #2d5a27 0%, #1a3a16 100%);
+      border-radius: 4px;
+      padding: 24px 26px;
+      margin-top: 24px;
+    }
+    .founding h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 22px;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .founding p { font-size: 14px; color: rgba(237,226,196,0.9); }
+    .founding ul { list-style: none; margin-top: 12px; }
+    .founding li {
+      font-size: 14px;
+      color: rgba(237,226,196,0.88);
+      padding-left: 18px;
+      position: relative;
+      margin-bottom: 7px;
+    }
+    .founding li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 10px;
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+    .founding li strong { color: #faf8f2; font-weight: 500; }
+
+    .byo {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 22px 24px;
+      margin-top: 16px;
+    }
+    .byo h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 19px;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .byo p { font-size: 14px; color: var(--text-soft); }
+
+    /* CONTACT */
+    .contact-box { text-align: center; }
+    .contact-box .name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 22px;
+      color: var(--ink);
+    }
+    .contact-box .role {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mute);
+      margin: 8px 0 16px;
+    }
+    .contact-box a.email {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 2.6vw, 26px);
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 3px;
+    }
+    .contact-box a.email:hover { color: var(--accent); }
+
+    .fine {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.06em;
+      color: var(--mute);
+      text-align: center;
+      margin-top: 26px;
+      line-height: 1.7;
+    }
+
+    footer {
+      padding: 34px 32px;
+      text-align: center;
+      border-top: 1px solid var(--rule);
+      position: relative;
+      z-index: 2;
+    }
+    footer .mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 15px;
+      color: var(--text-soft);
+    }
+
+    @media (max-width: 800px) {
+      .sheet { border-left: none; border-right: none; box-shadow: none; }
+    }
+
+    @media (max-width: 680px) {
+      .wrap { padding: 0 26px; }
+      .stats { grid-template-columns: repeat(2, 1fr); gap: 16px 8px; }
+      .two-col { grid-template-columns: 1fr; gap: 18px; }
+      .episodes { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .platform-grid { grid-template-columns: repeat(2, 1fr); }
+      .phase-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sheet">
+
+  <header class="hero">
+    <span class="masthead">Crazy Stupid Corp · Founding Partner Kit</span>
+    <div class="plate">
+      <img src="franklin-plate.jpg" alt="Crazy Stupid Money" width="142" height="142">
+    </div>
+    <h1 class="wordmark">Crazy <em>Stupid</em> Money</h1>
+    <p class="tagline">The craziest money you ever spent.</p>
+    <p class="kit-label">Partner Kit</p>
+  </header>
+
+  <section id="show">
+    <div class="wrap">
+      <p class="eyebrow">The Show</p>
+      <p class="body">
+        Crazy Stupid Money is a man-on-the-street interview show built around one question: <em>"What's the craziest, stupidest money you ever spent?"</em> That question opens a door. What sounds absurd at first often reveals something surprisingly personal. Shot on location at conferences, live events, retail locations, and the streets of Los Angeles. Real people, real stories, real reactions. No scripts. Every interview ends with a verdict: crazy, stupid, or money.
+      </p>
+      <p class="pull-quote">Every dollar has a story.</p>
+      <div class="stats">
+        <div class="stat"><div class="n">30+</div><div class="l">Interviews Shot</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">Platforms</div></div>
+        <div class="stat"><div class="n">3-4x</div><div class="l">Posts / Week</div></div>
+        <div class="stat"><div class="n">40+</div><div class="l">In the Pipeline</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <p class="eyebrow">The Work</p>
+      <h2>See it in action.</h2>
+      <p class="body">One question, real strangers, a verdict every time. A few from the field, including the floor of Bitcoin 2026 in Las Vegas.</p>
+      <div class="episodes">
+        <a class="episode" href="https://www.instagram.com/reel/DZK_T3fob-w/" target="_blank" rel="noopener" aria-label="He gave his employees $200,000 in Bitcoin">
+          <img src="posters/poster-mike.jpg" alt="He gave his employees $200,000 in Bitcoin" loading="lazy">
+          <span class="play" aria-hidden="true"></span>
+        </a>
+        <a class="episode" href="https://www.instagram.com/reel/DZsce2Uy6gJ/" target="_blank" rel="noopener" aria-label="First Bitcoin, then the Birkin">
+          <img src="posters/poster-bri.jpg" alt="First Bitcoin, then the Birkin" loading="lazy">
+          <span class="play" aria-hidden="true"></span>
+        </a>
+        <a class="episode" href="https://www.instagram.com/reel/DZVQQj4h9GL/" target="_blank" rel="noopener" aria-label="Even Spider-Man is feeling the economy">
+          <img src="posters/poster-spiderman.jpg" alt="Even Spider-Man is feeling the economy" loading="lazy">
+          <span class="play" aria-hidden="true"></span>
+        </a>
+      </div>
+      <p class="watch-more"><a href="https://instagram.com/crazystupidmoney" target="_blank" rel="noopener">Watch all on Instagram &#8594;</a></p>
+    </div>
+  </section>
+
+  <section id="format">
+    <div class="wrap">
+      <p class="eyebrow">Format</p>
+      <div class="two-col">
+        <div>
+          <h3>Money Clips <span class="dur">(1-3 min)</span></h3>
+          <p>Vertical 9:16 short-form. The question opens the conversation, but the magic is where it goes from there. Stories, reactions, follow-ups. Posted every other day across all platforms.</p>
+        </div>
+        <div>
+          <h3>Extended Cuts <span class="dur">(5-25 min)</span></h3>
+          <p>Horizontal 16:9 for YouTube. Full interviews, themed compilations (e.g., "Bitcoin Conference: Las Vegas"), B-roll packages, and voiceover segments. Weekly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="distribution">
+    <div class="wrap">
+      <p class="eyebrow">Distribution</p>
+      <div class="platform-grid">
+        <a class="platform-card" href="https://instagram.com/crazystupidmoney" target="_blank" rel="noopener"><div class="name">Instagram</div><div class="handle">@crazystupidmoney</div></a>
+        <a class="platform-card" href="https://tiktok.com/@crazystupid.money" target="_blank" rel="noopener"><div class="name">TikTok</div><div class="handle">@crazystupid.money</div></a>
+        <a class="platform-card" href="https://youtube.com/@CrazyStupidMoney" target="_blank" rel="noopener"><div class="name">YouTube</div><div class="handle">@CrazyStupidMoney</div></a>
+        <a class="platform-card" href="https://x.com/CrazyStupidCorp" target="_blank" rel="noopener"><div class="name">X / Twitter</div><div class="handle">@CrazyStupidCorp</div></a>
+        <a class="platform-card" href="https://www.linkedin.com/in/joshuamatthewpeters/recent-activity/all/" target="_blank" rel="noopener"><div class="name">LinkedIn</div><div class="handle">Joshua Peters</div></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="audience">
+    <div class="wrap">
+      <p class="eyebrow">Audience</p>
+      <p class="body">People who think about money all the time but scroll past anything that sounds like a lecture. They spend, they save, they gamble, they splurge, and they have strong opinions about all of it. Core demo is 25-44 with real income and real spending decisions. Finance content that doesn't feel like finance content. Your brand shows up inside a story, not a sales pitch.</p>
+      <p class="aud-note"><strong>Shoot locations to date:</strong> Bitcoin 2026 Conference (Las Vegas), Phish at the Sphere (Las Vegas). Upcoming: Los Angeles street shoots, retail locations, conferences, festivals.</p>
+    </div>
+  </section>
+
+  <section id="tiers">
+    <div class="wrap">
+      <p class="eyebrow">Partnership</p>
+      <h2>Partnership tiers.<span class="sub">Integrations that feel like content, not commercials.</span></h2>
+
+      <div class="tier">
+        <div class="tier-name">Location Partner</div>
+        <p>We shoot at your location. Your store, venue, or event becomes the backdrop for a CSM episode. We ask your customers the question. Your brand lives in the frame naturally, not as an ad read. You get tagged across all platforms and full content licensing rights.</p>
+        <div class="scope">Example scope: 1 shoot day + 2-4 Money Clips + cross-platform posting (IG, TikTok, YT Shorts, X) + brand tagged + content licensing</div>
+      </div>
+
+      <div class="tier">
+        <div class="tier-name">Wardrobe + Prop Collaboration</div>
+        <p>Your product is in the shot. The host wears your brand, holds your product, or uses your gear. No scripted mention. The integration is visual and organic. You send product, we wear it. You get repost rights and tagged across platforms.</p>
+        <div class="scope">Example scope: Product placement across 3-5 episodes + social tags + repost rights</div>
+      </div>
+
+      <div class="tier">
+        <div class="tier-name">Themed Episode</div>
+        <p>We produce a CSM-style shoot at your event or in your category. Same format, same energy, same question. Your brand sponsors the shoot and gets cross-platform distribution. Content lives on the CSM channel with description credit, or licensed for your brand's channels.</p>
+        <div class="scope">Example scope: 2-4 Money Clips from one shoot day + cross-platform posting + description credit + content licensing available</div>
+      </div>
+
+      <div class="tier">
+        <div class="tier-name">Series Presenting Sponsor</div>
+        <p>Your brand presents an entire content series. "The Bitcoin Conference Series, presented by [Brand]." Description credit on every episode. You own the batch, not individual clips. Ideal for multi-day events, conferences, or location-based shoots. Pricing scales with scope, travel, and crew.</p>
+        <div class="scope">Example scope: 6-10 Money Clips + compilation video + cross-platform posting + end-card placement + description credit + content licensing + analytics report. Travel and production costs quoted separately for out-of-market shoots.</div>
+      </div>
+
+      <div class="tier">
+        <div class="tier-name">Brand Residency</div>
+        <p>A multi-touchpoint campaign that embeds your brand into the show. We shoot a dedicated day at your location (in-store styling, employee interviews, customer interactions), then carry your product across 3-5 additional episodes shot elsewhere. Includes long-form YouTube content, recurring on-camera integration, and full cross-platform distribution.</p>
+        <div class="scope">Example scope: 1 dedicated shoot day + 1 long-form YouTube video + 2-4 Money Clips from location + 3-5 additional Money Clips with product carry-over + recurring integration + cross-platform posting + content licensing + analytics report. Brand provides wardrobe/product for production use.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="roadmap">
+    <div class="wrap">
+      <p class="eyebrow">The Roadmap</p>
+      <h2>Where this is going.</h2>
+      <div class="phase-grid">
+        <div class="phase"><div class="ph">Phase 1 · Now</div><div class="pt">Money Clips</div><p>Vertical short-form across 5 platforms. Every other day. High-velocity discovery content. New shoots weekly.</p></div>
+        <div class="phase"><div class="ph">Phase 2 · Fall 2026</div><div class="pt">YouTube Series</div><p>Horizontal extended cuts and themed compilations. Weekly uploads. Deeper storytelling, B-roll packages. Larger canvas for brand integrations.</p></div>
+        <div class="phase"><div class="ph">Phase 3 · 2027</div><div class="pt">The CSM Podcast</div><p>Same question, longer conversations. Sit-down interviews with founders, artists, and public figures. Audio + video distribution.</p></div>
+        <div class="phase"><div class="ph">Phase 4 · 2027+</div><div class="pt">CSM Live</div><p>Live audience events at festivals, conferences, and brand activations. Panel verdicts, crowd participation. Experiential partnerships.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="founding">
+    <div class="wrap">
+      <p class="eyebrow">Why Now</p>
+      <div class="founding">
+        <h3>Founding Partner Benefits</h3>
+        <p>A limited number of brands are invited to partner with CSM during our founding year. The window closes December 31, 2026.</p>
+        <ul>
+          <li><strong>Founding-partner rates</strong> locked in before they rise as the channel scales</li>
+          <li><strong>First right of refusal</strong> on future sponsorship inventory in your category</li>
+          <li><strong>Founding Partner credit</strong> acknowledged as an original supporter</li>
+          <li><strong>Custom packages</strong> available for multi-month or multi-series commitments</li>
+        </ul>
+      </div>
+      <div class="byo">
+        <h3>Build Your Own</h3>
+        <p>Don't see exactly what you need? Every brand is different and we'd rather build something that actually works for you than force a preset tier. Whether it's a one-off activation, a multi-month series, a custom shoot concept, or something we haven't thought of yet, let's figure it out together.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <p class="eyebrow">Correspondence</p>
+      <div class="contact-box">
+        <div class="name">Joshua Peters</div>
+        <div class="role">Executive Producer &amp; Host, Crazy Stupid Money</div>
+        <a class="email" href="mailto:josh@crazystupid.money">josh@crazystupid.money</a>
+      </div>
+      <p class="fine">Every partnership is scoped to the brand and the project. Content licensing for brand channels available on all tiers.<br>Founding-partner terms available through December 31, 2026.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p class="mark">Crazy Stupid Money</p>
+  </footer>
+
+  </div><!-- /sheet -->
+
+</body>
+</html>
